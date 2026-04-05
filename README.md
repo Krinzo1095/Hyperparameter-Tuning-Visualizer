@@ -1,41 +1,52 @@
-🚀 Hyperparameter-Tuning-Visualizer
-An interactive Streamlit dashboard that allows users to upload their dataset and visualize how different hyperparameters affect model performance using Random Forest (for both classification and regression).
-No manual preprocessing needed — just plug and play!
+# 🚀 Hyperparameter Tuning Visualizer
 
-<br>
-📁 Upload Guidelines – Compatible Dataset Requirements
-To ensure smooth operation, your CSV dataset should meet the following criteria:
+An interactive Streamlit dashboard to visualize how different hyperparameters affect model performance using **Random Forest** — supports both classification and regression tasks.
 
-📊 Must be in structured tabular format (.csv)
+> No manual preprocessing needed — just plug and play!
 
-🎯 Must have one clearly defined target column (for classification or regression tasks)
+---
 
-🔢 All feature columns should be either:
+## 🛠️ Tech Stack
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 
-Purely numeric, or
+---
 
-Categorical (e.g., "Male", "Red", "Yes")
+## 🧠 Features
 
-❌ Avoid:
+- 🔍 Auto-detects task type (classification or regression)
+- ⚙️ Choose between default training or **GridSearchCV** tuning
+- 📊 Displays metrics — Accuracy, RMSE, R², ROC Curve, Classification Report & Probability Histogram
+- 📋 Real-time logs of all model training events
+- 🤖 Auto handles encoding and missing value removal
 
-Mixed-type columns (like "355 hp", "20 km/l")
+---
 
-Embedded units/symbols (e.g., %, ₹, °C)
+## 📁 Dataset Requirements
 
-🔧 No need for:
+Upload any `.csv` file that meets the following:
 
-Manual preprocessing
+| ✅ Required | ❌ Avoid |
+|---|---|
+| Structured tabular format | Mixed-type columns (e.g. "355 hp") |
+| One clearly defined target column | Embedded units/symbols (%, ₹, °C) |
+| Numeric or categorical features | Free-text or unstructured columns |
 
-Creating dummy columns
-The app automatically handles encoding and missing value removal.
+> The app automatically handles encoding and missing value removal — no dummy columns needed!
 
-<br>
-🧠 Features
-Automatically detects task type (classification or regression)
+---
 
-Choose between default training or GridSearchCV tuning
+## 🚀 How to Run
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-Displays metrics: Accuracy, RMSE, R², ROC Curve, Classification Report, and Probability Histogram
+---
 
-Real-time logs of all model training events
-
+## 🔮 Future Roadmap
+- [ ] Support for more models (XGBoost, SVM)
+- [ ] Feature importance visualization
+- [ ] Download tuned model as `.pkl`
